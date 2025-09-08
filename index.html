@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anonymous Workplace Harassment Report</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Report Workplace Harassment</h1>
+    <p class="subtitle">Safe, anonymous, no emails or IPs logged.</p>
+    <p class="subtitle">Your safety comes first.</p>
+    <p class="subtitle">By Neha Asif Poya Care.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Submit a Report</h2>
+      <form id="reportForm">
+        <label>Your Name (optional)</label>
+        <input type="text" name="name" placeholder="e.g., Neha PC" />
+
+        <label>Your Email (optional)</label>
+        <input type="email" name="email" placeholder="e.g., youremail@domain.com" />
+
+        <label>Organization / Company (optional)</label>
+        <input type="text" name="org" placeholder="e.g., ABC Corp" />
+
+        <label>Category</label>
+        <select name="category" required>
+          <option value="">Select</option>
+          <option>Verbal harassment</option>
+          <option>Physical harassment</option>
+          <option>Sexual harassment</option>
+          <option>Online/Message harassment</option>
+          <option>Bullying / Intimidation</option>
+          <option>Discrimination</option>
+          <option>Other</option>
+        </select>
+
+        <label>Description (min 15 characters)</label>
+        <textarea name="description" rows="6" required placeholder="Describe what happened..."></textarea>
+
+        <div class="grid">
+          <div>
+            <label>When did it happen? (optional)</label>
+            <input type="text" name="incident_time" placeholder="e.g., Aug 12, 2025" />
+          </div>
+          <div>
+            <label>Location (optional)</label>
+            <input type="text" name="location" placeholder="e.g., Office, Zoom call" />
+          </div>
+        </div>
+
+        <label>Send report to email (optional)</label>
+        <input type="email" name="recipient_email" placeholder="e.g., youremail@domain.com" />
+        <small>If left blank, report will go to <strong>nehapcatwork@hotmail.com</strong></small>
+
+        <button type="submit" class="primary">Submit Report</button>
+        <p id="error" class="error" style="display:none;"></p>
+      </form>
+    </section>
+
+    <section class="card info">
+      <h2>Resources</h2>
+      <ul>
+        <li>If you are in danger, call your local emergency number immediately.</li>
+        <li>📞 <a href="#">National Women’s Helpline</a></li>
+        <li>🤝 <a href="#">Counseling and NGO support</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <dialog id="successModal">
+    <h3>Report submitted</h3>
+    <p>Your report has been sent successfully.</p>
+    <p>Tracking Code: <strong id="trackingCode"></strong></p>
+    <form method="dialog">
+      <button>Close</button>
+    </form>
+  </dialog>
+<!-- ✅ Load EmailJS globally -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+  <script src="./test.js"></script>
+</body>
+</html>
